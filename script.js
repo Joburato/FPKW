@@ -1,11 +1,11 @@
 function sanda(){
-    window.location.replace("sanda.html")
+    window.location.replace("/sanda.html")
 }
 
 function sandaini(){
-    window.location.replace("sandaini.html")
+    window.location.replace("/sandaini.html")
 }
 
 function taolu(){
-    window.location.replace("taolu.html") 
+    window.location.replace("/taolu.html") 
 }
