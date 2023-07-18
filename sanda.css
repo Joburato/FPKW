@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'roboremix';
+    src: url('RBNo3.1-Black.otf')
+}
+
+*{  
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'roboremix';
+}
+
+.jsx-3049476174 {
+    border-radius: 20px;
+}
+
+.home{
+    color: white;
+    font-family: 'roboremix';
+    font-size: 20px; 
+}
+
+.homer{
+    color: red;
+    font-family: 'roboremix';
+    font-size: 20px; 
+}
+
+.timer{
+    color: white;
+    font-family: 'roboremix';
+    font-size: 200px;  
+}
+
+.start{
+    color: yellow;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.pause{
+    margin: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.reset{
+    margin: 20px;
+    color: black;
+    background-color: red;
+    font-size: 20px;
+}
+
+.kos{
+    color: white;
+    font-size: 30px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.fodder1{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 300px;
+    margin: 0%;
+    border: 0;
+    padding: 0%;
+}
+
+.kos1{
+    left: 7%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.kos2{
+    left: 80%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pontos{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ponto1{
+    height: 60px;
+    width: 300px;
+    background-color: black;
+    margin: 10px;
+    border: 10px solid black;
+    border-radius: 100px;
+    background-size: cover;
+}
+
+.logo{
+    height: 40vh;
+    width: auto;
+    position: absolute;
+    background-color:rgba(255, 0, 0, 0) ;
+    bottom: 5vh;
+    right: 2vw;
+}
+
+.ponto2{
+    height: 60px;
+    width: 300px;
+    background-color: black;
+    margin: 10px;
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 100px;
+    background-size: cover;
+}
+
+.ponto3{
+    height: 60px;
+    width: 300px;
+    background-color: black;
+    margin: 10px;
+    border: 10px solid black;
+    border-radius: 100px;
+    background-size: cover;
+}
+
+.ponto4{
+    height: 60px;
+    width: 300px;
+    background-color: black;
+    margin: 10px;
+    border: 10px solid black;
+    border-radius: 100px;
+    background-size: cover;
+}
+
+.ponto5{
+    height: 60px;
+    width: 300px;
+    background-color: black;
+    margin: 10px;
+    border: 10px solid black;
+    border-radius: 100px;
+    background-size: cover;
+}

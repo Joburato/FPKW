@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'roboremix';
+    src: url('RBNo3.1-Black.otf')
+}
+
+*{  
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.logoc{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.logo{
+    height: 40vh;
+    width: auto;
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.h1{
+    color: white;
+    font-family: 'roboremix';
+}
+
+.botao{
+    color: white;
+    font-family: 'roboremix';
+    font-size: 25px;
+}
+
+.botao:hover{
+    cursor: pointer;
+}
+
+*.jsx-22149690391 {
+    border: 10px solid black;
+    background-color: black;
+    width: 2rem;
+    padding: 0;
+}
+
+*.jsx-22149690392 {
+    border: 30px solid black;
+    background-color: black;
+    width: 2rem;
+    padding: 0;
+}
+
+*.jsx-2214969039 {
+    border: 3px solid white;
+    background-color: white;
+    width: 80%;
+    padding: 0;
+}
