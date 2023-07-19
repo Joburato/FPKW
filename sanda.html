@@ -28,7 +28,7 @@
                         Relógio
                     </button>
                     
-                    <h1 class="jsx-2214969039">
+                    <h1 class="jsx-2214969039" style="opacity: 0;">
                         FEDERAÇÃO POTIGUAR DE KUNG FU WUSHU
                     </h1>
 
@@ -37,14 +37,23 @@
                     <link href="https://fonts.googleapis.com/css?family=Russo+One&amp;display=swap" rel="stylesheet" class="jsx-2214969039"/>
                 </div>
                 <div id="content" style="display:flex;flex-direction:column;justify-content:space-between;height:90%" class="jsx-3049476174">
-                    <label id="round" style="margin-top:10px; color: black;" class="jsx-3049476174 font-russo">
-                        ROUND
+                    
+                    <div class="header1">
+                        <label id="round" style="margin-top:10px; font-size: 30px;" class="jsx-3049476174 font-russo">
+                            Categoria:
+                        </label>
+    
+                        <input id="nome" type="text" class="cat" placeholder="Categoria">
+                        
+                    </div>
+                    <label id="round" style="margin-top:10px; opacity: 0;" class="jsx-3049476174 font-russo">
+                        Cat
                     </label>
-
+                    
                     <div id="boxes" class="jsx-3049476174">
                         <div class="jsx-3049476174 box red">
                             <span class="jsx-3049476174 font-russo white red names">
-                                
+                                <input id="nome" type="text" class="nomes" placeholder="Nome">
                             </span>
                         </div>
 
@@ -62,7 +71,8 @@
                         
                         <div class="jsx-3049476174 box blue">
                             <span class="jsx-3049476174 font-russo white blue names">
-                                
+                                <input id="nome" type="text" class="nomes" placeholder="Nome">
+                            
                             </span>
                         </div>
                     </div>
@@ -74,6 +84,30 @@
                         </div>
                         <div>
                             <label for="saidas" class="kos">SAÍDAS: </label>
+                            <input id="saidas" type="number" class="kos" name="saidas">
+                        </div>
+
+                    </div>
+
+                    <div class="kos3">
+                        <div>
+                            <label for="kos" class="kos">Faltas Técnicas: </label>
+                            <input id="kos1" type="number" class="kos" name="kos1">
+                        </div>
+                        <div>
+                            <label for="saidas" class="kos">Faltas Pessoais: </label>
+                            <input id="saidas" type="number" class="kos" name="saidas">
+                        </div>
+
+                    </div>
+
+                    <div class="kos4">
+                        <div>
+                            <label for="kos" class="kos">Faltas Técnicas: </label>
+                            <input id="kos1" type="number" class="kos" name="kos1">
+                        </div>
+                        <div>
+                            <label for="saidas" class="kos">Faltas Pessoais: </label>
                             <input id="saidas" type="number" class="kos" name="saidas">
                         </div>
 
@@ -153,53 +187,63 @@
         <script>
             "use strict";
 
-            let minute = 2;
-            let second = 0;
-            let cron;
+let minute = 2;
+let second = 0;
+let cron;
+let tickSound = new Audio('tick.mp3'); // Replace 'tick.mp3' with the path to your tick sound file
+let endSound = new Audio('end.mp3'); // Replace 'end.mp3' with the path to your end sound file
 
-            document.form_main.start.onclick = () => start();
-            document.form_main.pause.onclick = () => pause();
-            document.form_main.reset.onclick = () => reset();
+document.form_main.start.onclick = () => start();
+document.form_main.pause.onclick = () => pause();
+document.form_main.reset.onclick = () => reset();
 
-            function start() {
-                pause();
-                cron = setInterval(() => {
-                    timer();
-                }, 1000);
-            }
+function start() {
+  pause();
+  cron = setInterval(() => {
+    timer();
+  }, 1000);
+}
 
-            function pause() {
-                clearInterval(cron);
-            }
+function pause() {
+  clearInterval(cron);
+}
 
-            function reset() {
-                pause();
-                minute = 2;
-                second = 0;
+function reset() {
+  pause();
+  minute = 2;
+  second = 0;
 
-                document.getElementById('minute').innerText = '02';
-                document.getElementById('seconds').innerText = '00';
-            }
+  document.getElementById('minute').innerText = '02';
+  document.getElementById('seconds').innerText = '00';
+}
 
-            function timer() {
-                if (second === 0) {
-                    if (minute === 0) {
-                        pause();
-                        return;
-                    }
-                    second = 59;
-                    minute--;
-                } else {
-                    second--;
-                }
+function timer() {
+  if (second === 0) {
+    if (minute === 0) {
+      pause();
+      return;
+    }
+    second = 59;
+    minute--;
+  } else {
+    second--;
+  }
 
-                document.getElementById('minute').innerText = returnData(minute);
-                document.getElementById('seconds').innerText = returnData(second);
-            }
+  document.getElementById('minute').innerText = returnData(minute);
+  document.getElementById('seconds').innerText = returnData(second);
 
-            function returnData(input) {
-                return input >= 10 ? input : `0${input}`;
-            }
+  if (minute === 0 && second <= 10 && second != 0) {
+    tickSound.play();
+  }
+
+  if(minute === 0 && second == 0){
+    endSound.play();
+  }
+}
+
+function returnData(input) {
+  return input >= 10 ? input : `0${input}`;
+}
     
         </script>
         

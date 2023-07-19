@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" class="next-head"/>
         <style id="__jsx-2214969039">*.jsx-2214969039{margin:0;padding:0;}h1.jsx-2214969039{font-family:'Russo One';text-align:center;color:white;}#header.jsx-2214969039{background:black;}hr.jsx-2214969039{background-color:white;height:5px;border:none;margin:0 100px;}</style>
         <link rel="stylesheet" href="sanda.css">
-        <script src="sandaini.js"></script>
+        <script src="sanda.js"></script>
         <title>Campeonato Potiguar</title>
         <style id="__jsx-3049476174">*.jsx-3049476174{margin:0;left:0;background:black;}.font-russo.jsx-3049476174{font-family:'Russo One';}.white.jsx-3049476174{color:#fefefe;}.red.jsx-3049476174{background-color:#ec3237;}.blue.jsx-3049476174{background-color:#0098db;}.red-blue.jsx-3049476174{background-image:linear-gradient(to right,#ec3237 50%,#0098db 50%);}#round.jsx-3049476174{color:#fff116;font-size:50px;}.number.jsx-3049476174{font-size:130px;margin:0 40px;}.box.jsx-3049476174{height:120px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 20px;}#boxes.jsx-3049476174{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:90%;}#timer.jsx-3049476174{height:230px;font-size:220px;}#content.jsx-3049476174{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.names.jsx-3049476174{font-size:2.5vw;padding:0 10px;}.bolas.jsx-3049476174{width:100px;height:100%;border-radius:4em;border:4px solid #fefefe;}.bolinha.jsx-3049476174{width:50px;height:100%;border-radius:2em;border:4px solid #fefefe;}.input.jsx-3049476174{font-size:2vw;margin:0 15px;}</style>
     </head>
@@ -28,7 +28,7 @@
                         Relógio
                     </button>
                     
-                    <h1 class="jsx-2214969039">
+                    <h1 class="jsx-2214969039" style="opacity: 0;">
                         FEDERAÇÃO POTIGUAR DE KUNG FU WUSHU
                     </h1>
 
@@ -37,14 +37,23 @@
                     <link href="https://fonts.googleapis.com/css?family=Russo+One&amp;display=swap" rel="stylesheet" class="jsx-2214969039"/>
                 </div>
                 <div id="content" style="display:flex;flex-direction:column;justify-content:space-between;height:90%" class="jsx-3049476174">
-                    <label id="round" style="margin-top:10px; color: black;" class="jsx-3049476174 font-russo">
-                        ROUND
+                    
+                    <div class="header1">
+                        <label id="round" style="margin-top:10px; font-size: 30px;" class="jsx-3049476174 font-russo">
+                            Categoria:
+                        </label>
+    
+                        <input id="nome" type="text" class="cat" placeholder="Categoria">
+                        
+                    </div>
+                    <label id="round" style="margin-top:10px; opacity: 0;" class="jsx-3049476174 font-russo">
+                        Cat
                     </label>
-
+                    
                     <div id="boxes" class="jsx-3049476174">
                         <div class="jsx-3049476174 box red">
                             <span class="jsx-3049476174 font-russo white red names">
-                                
+                                <input id="nome" type="text" class="nomes" placeholder="Nome">
                             </span>
                         </div>
 
@@ -62,7 +71,8 @@
                         
                         <div class="jsx-3049476174 box blue">
                             <span class="jsx-3049476174 font-russo white blue names">
-                                
+                                <input id="nome" type="text" class="nomes" placeholder="Nome">
+                            
                             </span>
                         </div>
                     </div>
@@ -74,6 +84,30 @@
                         </div>
                         <div>
                             <label for="saidas" class="kos">SAÍDAS: </label>
+                            <input id="saidas" type="number" class="kos" name="saidas">
+                        </div>
+
+                    </div>
+
+                    <div class="kos3">
+                        <div>
+                            <label for="kos" class="kos">Faltas Técnicas: </label>
+                            <input id="kos1" type="number" class="kos" name="kos1">
+                        </div>
+                        <div>
+                            <label for="saidas" class="kos">Faltas Pessoais: </label>
+                            <input id="saidas" type="number" class="kos" name="saidas">
+                        </div>
+
+                    </div>
+
+                    <div class="kos4">
+                        <div>
+                            <label for="kos" class="kos">Faltas Técnicas: </label>
+                            <input id="kos1" type="number" class="kos" name="kos1">
+                        </div>
+                        <div>
+                            <label for="saidas" class="kos">Faltas Pessoais: </label>
                             <input id="saidas" type="number" class="kos" name="saidas">
                         </div>
 
@@ -153,53 +187,63 @@
         <script>
             "use strict";
 
-            let minute = 1;
-            let second = 30;
-            let cron;
+let minute = 1;
+let second = 30;
+let cron;
+let tickSound = new Audio('tick.mp3'); // Replace 'tick.mp3' with the path to your tick sound file
+let endSound = new Audio('end.mp3'); // Replace 'end.mp3' with the path to your end sound file
 
-            document.form_main.start.onclick = () => start();
-            document.form_main.pause.onclick = () => pause();
-            document.form_main.reset.onclick = () => reset();
+document.form_main.start.onclick = () => start();
+document.form_main.pause.onclick = () => pause();
+document.form_main.reset.onclick = () => reset();
 
-            function start() {
-                pause();
-                cron = setInterval(() => {
-                    timer();
-                }, 1000);
-            }
+function start() {
+  pause();
+  cron = setInterval(() => {
+    timer();
+  }, 1000);
+}
 
-            function pause() {
-                clearInterval(cron);
-            }
+function pause() {
+  clearInterval(cron);
+}
 
-            function reset() {
-                pause();
-                minute = 1;
-                second = 30;
+function reset() {
+  pause();
+  minute = 1;
+  second = 30;
 
-                document.getElementById('minute').innerText = '02';
-                document.getElementById('seconds').innerText = '00';
-            }
+  document.getElementById('minute').innerText = '02';
+  document.getElementById('seconds').innerText = '00';
+}
 
-            function timer() {
-                if (second === 0) {
-                    if (minute === 0) {
-                        pause();
-                        return;
-                    }
-                    second = 59;
-                    minute--;
-                } else {
-                    second--;
-                }
+function timer() {
+  if (second === 0) {
+    if (minute === 0) {
+      pause();
+      return;
+    }
+    second = 59;
+    minute--;
+  } else {
+    second--;
+  }
 
-                document.getElementById('minute').innerText = returnData(minute);
-                document.getElementById('seconds').innerText = returnData(second);
-            }
+  document.getElementById('minute').innerText = returnData(minute);
+  document.getElementById('seconds').innerText = returnData(second);
 
-            function returnData(input) {
-                return input >= 10 ? input : `0${input}`;
-            }
+  if (minute === 0 && second <= 10 && second != 0) {
+    tickSound.play();
+  }
+
+  if(minute === 0 && second == 0){
+    endSound.play();
+  }
+}
+
+function returnData(input) {
+  return input >= 10 ? input : `0${input}`;
+}
     
         </script>
         
