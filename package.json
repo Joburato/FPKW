@@ -1,0 +1,41 @@
+{
+  "name": "Placar FPBKW",
+  "main": "index.html",
+  "description": "Placar para a FPBKW.",
+  "version": "1.0.0",
+  "author": "Eduardo Job Gomes Silva",
+  "nodejs": true,
+  "window": {
+    "title": "Placar FPBKW",
+    "icon": "C:\\Users\\Eduar\\OneDrive\\Documentos\\Projetos\\Placares Paraiba\\fpbkw_logo.ico",
+    "height": 600,
+    "min_width": 400,
+    "min_height": 300
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "--disable-web-security",
+  "files": [
+    "index.html",
+    "end.mp3",
+    "fpbkw_logo.png",
+    "RBNo3.1-Black.otf",
+    "redblue.png",
+    "sanda.css",
+    "sanda.html",
+    "sanda.js",
+    "sandaini.html",
+    "sandaini.js",
+    "script.js",
+    "styles.css",
+    "taolu.css",
+    "laolu.html",
+    "laolu.js",
+    "tick.mp3"
+  ],
+  "platforms": ["win64", "osx64", "linux64"],
+  "buildDir": "./dist",
+  "cacheDir": "./cache",
+  "version": "0.54.1"
+}
