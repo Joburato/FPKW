@@ -1,76 +1,71 @@
-# FPKW Project (gh-pages)
+# Sistema de Arbitragem - FPKW (Federação Potiguar de Kung Fu Wushu)
 
-Um breve subtítulo que descreve seu projeto.
+Este projeto é uma aplicação web estática desenvolvida para auxiliar na gestão de campeonatos de Kung Fu Wushu. O sistema funciona como um placar eletrônico e calculadora de notas para as modalidades de combate (Sandá) e formas (Taolu).
 
-[![Status do Build](https://img.shields.io/travis/com/usuario/fpkw-gh-pages.svg?style=flat-square)](https://travis-ci.com/usuario/fpkw-gh-pages)
-[![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg?style=flat-square)](/LICENSE)
+O projeto está configurado para ser hospedado via **GitHub Pages**.
 
-![Demonstração do Projeto](caminho/para/sua/imagem_demo.png)
+## 📋 Funcionalidades
 
-## 📖 Sobre
+O sistema é dividido em três módulos principais acessíveis pela página inicial:
 
-Uma descrição mais detalhada do seu projeto. Fale sobre o propósito, a motivação e os principais objetivos. Para quem é este projeto? Que problema ele resolve?
+### 1. Sandá (Profissional/Avançado)
+Placar eletrônico para lutas oficiais.
+*   **Cronômetro:** Timer de 2 minutos com controle de Início, Pausa e Reset.
+*   **Áudio:** Efeitos sonoros automáticos para os 10 segundos finais (`tick.mp3`) e fim do round (`end.mp3`).
+*   **Pontuação:**
+    *   Controle de rounds (melhor de 3) com indicadores visuais (bolinhas).
+    *   Contagem de KOS (Nocautes/Quedas), Saídas e Faltas (Técnicas e Pessoais).
+    *   Identificação visual dos atletas (Vermelho vs Azul).
 
-## ✨ Tecnologias Utilizadas
+### 2. Sandá Iniciante
+Versão adaptada para categorias de base.
+*   **Cronômetro:** Timer ajustado para 1 minuto e 30 segundos.
+*   **Placar Simplificado:** Lógica específica para pontuação de rounds, permitindo marcar vitória para Vermelho, Azul ou Empate/Decisão Dividida (indicador bicolor).
 
-Liste as principais tecnologias, frameworks e ferramentas que você utilizou para construir o projeto.
+### 3. Taolu (Rotinas)
+Calculadora para a banca de arbitragem.
+*   **Entrada de Notas:** Campos para 5 juízes.
+*   **Cálculo Automático:**
+    *   Identifica e descarta a maior e a menor nota (destacando-as em vermelho).
+    *   Calcula a média aritmética das 3 notas restantes.
+*   **Interface:** Botões para calcular a nota final e reiniciar o formulário.
 
-- [React](https://reactjs.org/)
-- [Styled Components](https://styled-components.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- ...
+## 🚀 Como Usar
 
-## 🚀 Como Começar
+### Online (GitHub Pages)
+Acesse o link do repositório publicado (ex: `https://seu-usuario.github.io/FPKW-gh-pages/`).
 
-Forneça um guia passo a passo sobre como um desenvolvedor pode obter uma cópia local do projeto e executá-la.
+### Localmente
+Como é um projeto estático (HTML/CSS/JS), você pode rodá-lo diretamente no seu computador:
 
-**Pré-requisitos**
+1.  Clone este repositório.
+2.  Abra o arquivo `index.html` em qualquer navegador moderno (Chrome, Firefox, Edge).
 
-- [Node.js](https://nodejs.org/en/)
-- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+> **Nota:** Para que os sons do cronômetro funcionem corretamente, o navegador pode exigir que o usuário interaja com a página (clique em algo) antes de permitir a reprodução de áudio.
 
-**Instalação**
+## 🛠️ Tecnologias Utilizadas
 
-1.  Clone o repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/FPKW-gh-pages.git
-    ```
+*   **HTML5:** Estrutura semântica das páginas.
+*   **CSS3:** Estilização personalizada (incluindo fontes `Russo One` e `roboremix`).
+*   **JavaScript (Vanilla):** Lógica de cronômetro, manipulação do DOM e cálculos matemáticos.
 
-2.  Navegue até o diretório do projeto:
-    ```bash
-    cd FPKW-gh-pages
-    ```
+## 📂 Estrutura de Arquivos
 
-3.  Instale as dependências:
-    ```bash
-    npm install
-    # ou
-    yarn install
-    ```
+*   `index.html`: Menu principal.
+*   `sanda.html` / `sanda.js` / `sanda.css`: Módulo de luta principal.
+*   `sandaini.html` / `sandaini.js`: Módulo de luta iniciante.
+*   `taolu.html` / `taolu.js` / `taolu.css`: Módulo de formas.
+*   `assets`: Imagens (`redblue.png`, logos) e sons (`tick.mp3`, `end.mp3`).
 
-4.  Inicie o servidor de desenvolvimento:
-    ```bash
-    npm start
-    # ou
-    yarn start
-    ```
+## 🤝 Contribuição
 
-Agora você pode visualizar o projeto em `http://localhost:3000`.
-
-## 🤝 Como Contribuir
-
-Se você deseja que outras pessoas contribuam com seu projeto, forneça diretrizes sobre como fazê-lo.
-
-1.  Faça um Fork do projeto.
-2.  Crie uma nova branch para sua feature (`git checkout -b feature/sua-feature`).
-3.  Faça o commit de suas alterações (`git commit -m 'Adiciona sua-feature'`).
-4.  Faça o push para a branch (`git push origin feature/sua-feature`).
-5.  Abra um Pull Request.
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Sinta-se à vontade para abrir *issues* ou enviar *pull requests* para melhorias no código ou no design.
 
 ---
 
-Feito com ❤️ por Seu Nome
+**Federação Potiguar de Kung Fu Wushu**
+```
+
+<!--
+[PROMPT_SUGGESTION]Como eu faço para corrigir o bug de lógica no cálculo da média no arquivo taolu.js?[/PROMPT_SUGGESTION]
+[PROMPT_SUGGESTION]Pode criar um arquivo .gitignore para este projeto?[/PROMPT_SUGGESTION]
