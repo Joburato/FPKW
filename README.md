@@ -30,19 +30,6 @@ Calculadora para a banca de arbitragem.
     *   Calcula a média aritmética das 3 notas restantes.
 *   **Interface:** Botões para calcular a nota final e reiniciar o formulário.
 
-## 🚀 Como Usar
-
-### Online (GitHub Pages)
-Acesse o link do repositório publicado (ex: `https://seu-usuario.github.io/FPKW-gh-pages/`).
-
-### Localmente
-Como é um projeto estático (HTML/CSS/JS), você pode rodá-lo diretamente no seu computador:
-
-1.  Clone este repositório.
-2.  Abra o arquivo `index.html` em qualquer navegador moderno (Chrome, Firefox, Edge).
-
-> **Nota:** Para que os sons do cronômetro funcionem corretamente, o navegador pode exigir que o usuário interaja com a página (clique em algo) antes de permitir a reprodução de áudio.
-
 ## 🛠️ Tecnologias Utilizadas
 
 *   **HTML5:** Estrutura semântica das páginas.
@@ -56,16 +43,3 @@ Como é um projeto estático (HTML/CSS/JS), você pode rodá-lo diretamente no s
 *   `sandaini.html` / `sandaini.js`: Módulo de luta iniciante.
 *   `taolu.html` / `taolu.js` / `taolu.css`: Módulo de formas.
 *   `assets`: Imagens (`redblue.png`, logos) e sons (`tick.mp3`, `end.mp3`).
-
-## 🤝 Contribuição
-
-Sinta-se à vontade para abrir *issues* ou enviar *pull requests* para melhorias no código ou no design.
-
----
-
-**Federação Potiguar de Kung Fu Wushu**
-```
-
-<!--
-[PROMPT_SUGGESTION]Como eu faço para corrigir o bug de lógica no cálculo da média no arquivo taolu.js?[/PROMPT_SUGGESTION]
-[PROMPT_SUGGESTION]Pode criar um arquivo .gitignore para este projeto?[/PROMPT_SUGGESTION]
